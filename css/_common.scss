@@ -46,13 +46,32 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 130%;
   height: 100vh;
   background: #f5f0e8;
   transform: translateX(100%);
   z-index: 10;
   pointer-events: none;
-  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); // 사선 모양
+  // clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); // 사선 모양
+  clip-path: polygon(
+  // 왼쪽 계단 (위→아래, 점점 왼쪽으로)
+  120px 0,
+  120px 25%,
+  120px 25%,
+  120px 50%,
+  0 50%,
+  0 100%,
+
+  // 하단
+  100% 100%,
+
+  // 오른쪽 계단 (아래→위, 점점 왼쪽으로)
+  100% 50%,
+  calc(100% - 120px) 50%,
+  calc(100% - 120px) 25%,
+  calc(100% - 120px) 25%,
+  calc(100% - 120px) 0
+);
 }
 
 // 폰트
@@ -66,3 +85,4 @@ html, body {
 }
 
 // 색상
+
