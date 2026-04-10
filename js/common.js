@@ -8,18 +8,22 @@ window.addEventListener('wheel', (e) => {
 
   if (e.deltaY > 0 && cur < total - 1) {
     busy = true;
-
-    // 패널 + 섹션 전환 동시에
     cur++;
-    document.getElementById('wrap').style.transform = `translateY(-${cur * 100}vh)`;
+
+    const wrap = document.getElementById('wrap');
+    wrap.style.transition = cur === total - 1
+      ? 'transform 1.3s cubic-bezier(1,0,0,1)'
+      : 'transform 1.2s linear';
+
+    wrap.style.transform = `translateX(-${cur * 100}vw)`;
 
     panel.style.transition = 'none';
     panel.style.transform = 'translateX(100%)';
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        panel.style.transition = 'transform 1.25s ease-in-out';
-        panel.style.transform = 'translateX(-100%)'; // 오른쪽에서 왼쪽으로 한번에 통과
+        panel.style.transition = 'transform 1.25s linear';
+        panel.style.transform = 'translateX(-100%)';
       });
     });
 
@@ -28,15 +32,20 @@ window.addEventListener('wheel', (e) => {
   } else if (e.deltaY < 0 && cur > 0) {
     busy = true;
 
+    const wrap = document.getElementById('wrap');
+    wrap.style.transition = cur === total - 1
+      ? 'transform 1.3s cubic-bezier(1,0,0,1)'
+      : 'transform 1.2s linear';
+
     cur--;
-    document.getElementById('wrap').style.transform = `translateY(-${cur * 100}vh)`;
+    wrap.style.transform = `translateX(-${cur * 100}vw)`;
 
     panel.style.transition = 'none';
     panel.style.transform = 'translateX(-100%)';
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        panel.style.transition = 'transform 1.25s ease-in-out';
+        panel.style.transition = 'transform 1.25s linear';
         panel.style.transform = 'translateX(100%)';
       });
     });

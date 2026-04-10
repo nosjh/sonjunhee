@@ -30,21 +30,36 @@ html, body {
 }
 
 #wrap {
+  display: flex;
+  flex-direction: row;  
+  width: calc(100vw * 4); // 섹션 개수
   height: 100vh;
-  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 1.2s linear;
 }
 
 .section {
-  width: 100%;
+  background-color: #252540;
+  color: #E8A87C;
+  position: relative;
+  width: 100vw;
   height: 100vh;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  &:nth-child(4) {
+    background-color: #E8A87C;
+    color: #252540;
+  }
 }
 
 // 폰트
 
 @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
 .tiny5-regular {
   font-family: "Tiny5", sans-serif;
@@ -52,8 +67,28 @@ html, body {
   font-style: normal;
 }
 
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.galmuri9 {
+  font-family: Galmuri9, sans-serif;
+  font-style: normal;
+}
+
 // 색상
 
+$white: #ffffff;
+$black: #222222;
+$navy: #252540;
+$navy2: #1E1E35;
+$navy3: #777797;
+$orange: #E8A87C;
+$green: #7EC89B;
+$mint: #7CE8D8;
+$blue: #7CAAE8;
 
 // 풀페이지 패널
 
@@ -61,9 +96,9 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #222222;
+  width: 200%;
+  height: 100%;
+  background: $orange;
   transform: translateX(100%);
   z-index: 10;
   pointer-events: none;
