@@ -51,19 +51,30 @@ html, body {
 .panel {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 200%;
+  width: 100%;
   height: 100%;
   background: #E8A87C;
   transform: translateX(100%);
-  z-index: 10;
+  z-index: 2;
   pointer-events: none;
   clip-path: polygon(0 0, 100% 0, 100% 30px, calc(100% - 15px) 30px, calc(100% - 15px) 60px, calc(100% - 30px) 60px, calc(100% - 30px) 90px, calc(100% - 45px) 90px, calc(100% - 45px) 120px, calc(100% - 60px) 120px, calc(100% - 60px) 150px, calc(100% - 75px) 150px, calc(100% - 75px) 180px, calc(100% - 90px) 180px, calc(100% - 90px) 210px, calc(100% - 105px) 210px, calc(100% - 105px) 240px, calc(100% - 120px) 240px, calc(100% - 120px) 270px, calc(100% - 135px) 270px, calc(100% - 135px) 300px, calc(100% - 150px) 300px, calc(100% - 150px) 330px, calc(100% - 165px) 330px, calc(100% - 165px) 360px, calc(100% - 180px) 360px, calc(100% - 180px) 390px, calc(100% - 195px) 390px, calc(100% - 195px) 420px, calc(100% - 210px) 420px, calc(100% - 210px) 450px, calc(100% - 225px) 450px, calc(100% - 225px) 480px, calc(100% - 240px) 480px, calc(100% - 240px) 510px, calc(100% - 255px) 510px, calc(100% - 255px) 540px, calc(100% - 270px) 540px, calc(100% - 270px) 570px, calc(100% - 285px) 570px, calc(100% - 285px) 600px, calc(100% - 300px) 600px, calc(100% - 300px) 630px, calc(100% - 315px) 630px, calc(100% - 315px) 660px, calc(100% - 330px) 660px, calc(100% - 330px) 690px, calc(100% - 345px) 690px, calc(100% - 345px) 720px, calc(100% - 360px) 720px, calc(100% - 360px) 750px, calc(100% - 375px) 750px, calc(100% - 375px) 780px, calc(100% - 390px) 780px, calc(100% - 390px) 810px, calc(100% - 405px) 810px, calc(100% - 405px) 840px, calc(100% - 420px) 840px, calc(100% - 420px) 870px, calc(100% - 435px) 870px, calc(100% - 435px) 900px, calc(100% - 450px) 900px, calc(100% - 450px) 930px, calc(100% - 465px) 930px, calc(100% - 465px) 960px, calc(100% - 480px) 960px, calc(100% - 480px) 990px, calc(100% - 495px) 990px, calc(100% - 495px) 1020px, calc(100% - 510px) 1020px, calc(100% - 510px) 1050px, calc(100% - 525px) 1050px, calc(100% - 525px) 100%, 0 100%, 0 calc(100% - 30px), 15px calc(100% - 30px), 15px calc(100% - 60px), 30px calc(100% - 60px), 30px calc(100% - 90px), 45px calc(100% - 90px), 45px calc(100% - 120px), 60px calc(100% - 120px), 60px calc(100% - 150px), 75px calc(100% - 150px), 75px calc(100% - 180px), 90px calc(100% - 180px), 90px calc(100% - 210px), 105px calc(100% - 210px), 105px calc(100% - 240px), 120px calc(100% - 240px), 120px calc(100% - 270px), 135px calc(100% - 270px), 135px calc(100% - 300px), 150px calc(100% - 300px), 150px calc(100% - 330px), 165px calc(100% - 330px), 165px calc(100% - 360px), 180px calc(100% - 360px), 180px calc(100% - 390px), 195px calc(100% - 390px), 195px calc(100% - 420px), 210px calc(100% - 420px), 210px calc(100% - 450px), 225px calc(100% - 450px), 225px calc(100% - 480px), 240px calc(100% - 480px), 240px calc(100% - 510px), 255px calc(100% - 510px), 255px calc(100% - 540px), 270px calc(100% - 540px), 270px calc(100% - 570px), 285px calc(100% - 570px), 285px calc(100% - 600px), 300px calc(100% - 600px), 300px calc(100% - 630px), 315px calc(100% - 630px), 315px calc(100% - 660px), 330px calc(100% - 660px), 330px calc(100% - 690px), 345px calc(100% - 690px), 345px calc(100% - 720px), 360px calc(100% - 720px), 360px calc(100% - 750px), 375px calc(100% - 750px), 375px calc(100% - 780px), 390px calc(100% - 780px), 390px calc(100% - 810px), 405px calc(100% - 810px), 405px calc(100% - 840px), 420px calc(100% - 840px), 420px calc(100% - 870px), 435px calc(100% - 870px), 435px calc(100% - 900px), 450px calc(100% - 900px), 450px calc(100% - 930px), 465px calc(100% - 930px), 465px calc(100% - 960px), 480px calc(100% - 960px), 480px calc(100% - 990px), 495px calc(100% - 990px), 495px calc(100% - 1020px), 510px calc(100% - 1020px), 510px calc(100% - 1050px), 525px calc(100% - 1050px), 525px 0);
 }
 @media (max-width: 767px) {
   .panel {
-    width: 250%;
+    width: 200%;
   }
+}
+
+header > div {
+  background-color: #252540;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #777797;
+  color: #ffffff;
+  z-index: 3;
 }
 
 @keyframes showTopText {
