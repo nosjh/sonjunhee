@@ -25,6 +25,7 @@ $desktop: 1024px;
 //풀페이지
 
 html, body {
+  font-size: 100%;
   margin: 0;
   overflow: hidden;
 }
@@ -32,7 +33,7 @@ html, body {
 #wrap {
   display: flex;
   flex-direction: row;  
-  width: calc(100vw * 4); // 섹션 개수
+  width: calc(100vw * 4);
   height: 100vh;
   transition: transform 1.2s linear;
 }
@@ -48,6 +49,7 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  // padding: 0 clamp(20px, 5vw, 240px);
 
   &:nth-child(4) {
     background-color: #E8A87C;

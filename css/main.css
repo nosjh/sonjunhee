@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 html, body {
+  font-size: 100%;
   margin: 0;
   overflow: hidden;
 }
@@ -65,18 +66,6 @@ html, body {
   }
 }
 
-header > div {
-  background-color: #252540;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #777797;
-  color: #ffffff;
-  z-index: 3;
-}
-
 @keyframes showTopText {
   0% {
     transform: translate3d(0, 100%, 0);
@@ -102,7 +91,6 @@ header > div {
 .animated-title {
   color: #E8A87C;
   height: 90vmin;
-  left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -143,4 +131,79 @@ header > div {
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+header > div {
+  background-color: #252540;
+  position: fixed;
+  top: 0;
+  padding: 0 clamp(20px, 5vw, 240px);
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #777797;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  color: #E8A87C;
+}
+
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #E8A87C;
+  transition: 0.5s;
+  z-index: 1;
+}
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(2);
+  opacity: 0;
+  transition: 0.3s;
+}
+ul li a:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E8A87C;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+ul li a:hover {
+  color: #252540;
+}
+ul li a:hover:before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+ul li a:hover:after {
+  transform: scaleY(1);
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
