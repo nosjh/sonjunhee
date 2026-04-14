@@ -1,14 +1,91 @@
+// @use 'common' as *;
+
+// header > div {
+//   box-sizing: border-box;
+//   background-color: $orange;
+//   position: fixed; 
+//   top: 0;
+//   padding: 0 clamp(20px, 5vw, 240px);        
+//   width: 100%;    
+//   height: 80px;
+//   border-bottom: 2px solid $white; 
+//   color: $white;
+//   z-index: 3;
+//   display: flex;          
+//   align-items: center;     
+//   justify-content: space-between;
+// }
+
+// .logo {
+//   color: $navy;
+// }
+
+// ul {
+//   display: flex;
+//   margin: 0;
+//   padding: 0;
+//   li {
+//     list-style: none;
+//     a {
+//       position: relative;
+//       display: block;
+//       text-transform: uppercase;
+//       margin: 20px 0;
+//       padding: 10px 20px;
+//       text-decoration: none;
+//       color: $navy;
+//       transition: .5s;
+//       z-index: 1;
+//       &:before {
+//         content: '';
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         transform: scaleY(2);
+//         opacity: 0;
+//         transition: .3s;
+//       }
+//       &:after {
+//         content: '';
+//         position: absolute;
+//         top: 2px;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: $navy;
+//         transform: scale(0);
+//         opacity: 0;
+//         transition: .3s;
+//         z-index: -1;
+//       }
+//       &:hover {
+//         color: $orange;
+//         &:before {
+//           transform: scaleY(1);
+//           opacity: 1;
+//         }
+//         &:after {
+//           transform: scaleY(1);
+//           opacity: 1;
+//         }
+//       }
+//     }
+//   }
+// }
+
 @use 'common' as *;
 
 header > div {
   box-sizing: border-box;
-  background-color: $navy2;
+  background-color: $orange;
   position: fixed; 
   top: 0;
-  padding: 0 clamp(20px, 5vw, 240px);        
+  padding: 0 clamp(20px, 5vw, 240px);
   width: 100%;    
   height: 80px;
-  border-bottom: 1px solid $navy3; 
+  border-bottom: 2px solid $white; 
   color: $white;
   z-index: 3;
   display: flex;          
@@ -17,13 +94,102 @@ header > div {
 }
 
 .logo {
-  color: $orange;
+  color: $navy;
 }
 
+// 햄버거 버튼 (모바일에서만 표시)
+.hamburger {
+  display: none;
+
+  @include mobile {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::before,
+  &::after,
+  span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: $navy;
+    border-radius: 3px;
+    transition: .2s;
+  }
+
+  &::before {
+    top: 3px;
+    left: 8px;
+    transform-origin: 0 0;
+    transform: rotate(45deg) scaleX(0);
+    transition-delay: 0s;
+  }
+
+  &::after {
+    top: 3px;
+    right: 9px;
+    transform-origin: 100% 0;
+    transform: rotate(-45deg) scaleX(0);
+    transition-delay: .2s;
+  }
+
+  span:nth-of-type(1) {
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    transition-delay: .5s;
+  }
+
+  span:nth-of-type(2) {
+    top: 20px;
+    left: 0;
+    transform-origin: 50% 50%;
+    transition-delay: .5s;
+  }
+
+  span:nth-of-type(3) {
+    right: 0;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transition-delay: .5s;
+  }
+
+  &.active {
+    &::before {
+      transform: rotate(45deg) scaleX(1);
+      transition-delay: .3s;
+    }
+    &::after {
+      transform: rotate(-45deg) scaleX(1);
+      transition-delay: .5s;
+    }
+    span:nth-of-type(-n+3) {
+      transform: scaleX(0);
+      transition-delay: 0s;
+    }
+  }
+}
+
+// 데스크탑 ul
 ul {
   display: flex;
   margin: 0;
   padding: 0;
+
+  @include mobile {
+    display: none; // 모바일에서 숨김
+  }
+
   li {
     list-style: none;
     a {
@@ -33,20 +199,10 @@ ul {
       margin: 20px 0;
       padding: 10px 20px;
       text-decoration: none;
-      color: $orange;
+      color: $navy;
       transition: .5s;
       z-index: 1;
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: scaleY(2);
-        opacity: 0;
-        transition: .3s;
-      }
+
       &:after {
         content: '';
         position: absolute;
@@ -54,21 +210,63 @@ ul {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $orange;
+        background-color: $navy;
         transform: scale(0);
         opacity: 0;
         transition: .3s;
         z-index: -1;
       }
+
       &:hover {
-        color: $navy;
-        &:before {
-          transform: scaleY(1);
-          opacity: 1;
-        }
+        color: $orange;
         &:after {
           transform: scaleY(1);
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// 모바일 네비 패널
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $orange;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 1.0s linear;
+  
+  &.active {
+    transform: translateY(0);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      list-style: none;
+
+      a {
+        display: block;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $navy;
+        font-size: 1.2rem;
+
+        &.current {
+          background-color: $navy;
+          color: $orange;
         }
       }
     }

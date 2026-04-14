@@ -140,13 +140,13 @@ html, body {
 
 header > div {
   box-sizing: border-box;
-  background-color: #1E1E35;
+  background-color: #E8A87C;
   position: fixed;
   top: 0;
   padding: 0 clamp(20px, 5vw, 240px);
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid #777797;
+  border-bottom: 2px solid #ffffff;
   color: #ffffff;
   z-index: 3;
   display: flex;
@@ -155,13 +155,89 @@ header > div {
 }
 
 .logo {
-  color: #E8A87C;
+  color: #252540;
+}
+
+.hamburger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hamburger {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+}
+.hamburger::before, .hamburger::after,
+.hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #252540;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+.hamburger::before {
+  top: 3px;
+  left: 8px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scaleX(0);
+  transition-delay: 0s;
+}
+.hamburger::after {
+  top: 3px;
+  right: 9px;
+  transform-origin: 100% 0;
+  transform: rotate(-45deg) scaleX(0);
+  transition-delay: 0.2s;
+}
+.hamburger span:nth-of-type(1) {
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  transition-delay: 0.5s;
+}
+.hamburger span:nth-of-type(2) {
+  top: 20px;
+  left: 0;
+  transform-origin: 50% 50%;
+  transition-delay: 0.5s;
+}
+.hamburger span:nth-of-type(3) {
+  right: 0;
+  bottom: 0;
+  transform-origin: 100% 0;
+  transition-delay: 0.5s;
+}
+.hamburger.active::before {
+  transform: rotate(45deg) scaleX(1);
+  transition-delay: 0.3s;
+}
+.hamburger.active::after {
+  transform: rotate(-45deg) scaleX(1);
+  transition-delay: 0.5s;
+}
+.hamburger.active span:nth-of-type(-n+3) {
+  transform: scaleX(0);
+  transition-delay: 0s;
 }
 
 ul {
   display: flex;
   margin: 0;
   padding: 0;
+}
+@media (max-width: 767px) {
+  ul {
+    display: none;
+  }
 }
 ul li {
   list-style: none;
@@ -173,20 +249,9 @@ ul li a {
   margin: 20px 0;
   padding: 10px 20px;
   text-decoration: none;
-  color: #E8A87C;
+  color: #252540;
   transition: 0.5s;
   z-index: 1;
-}
-ul li a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scaleY(2);
-  opacity: 0;
-  transition: 0.3s;
 }
 ul li a:after {
   content: "";
@@ -195,20 +260,55 @@ ul li a:after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #E8A87C;
+  background-color: #252540;
   transform: scale(0);
   opacity: 0;
   transition: 0.3s;
   z-index: -1;
 }
 ul li a:hover {
-  color: #252540;
-}
-ul li a:hover:before {
-  transform: scaleY(1);
-  opacity: 1;
+  color: #E8A87C;
 }
 ul li a:hover:after {
   transform: scaleY(1);
   opacity: 1;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #E8A87C;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 1s linear;
+}
+.mobile-nav.active {
+  transform: translateY(0);
+}
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.mobile-nav ul li {
+  list-style: none;
+}
+.mobile-nav ul li a {
+  display: block;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #252540;
+  font-size: 1.2rem;
+}
+.mobile-nav ul li a.current {
+  background-color: #252540;
+  color: #E8A87C;
 }/*# sourceMappingURL=main.css.map */
