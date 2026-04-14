@@ -99,3 +99,24 @@ document.querySelectorAll('.header a').forEach(link => {
     goTo(target);
   });
 });
+
+// 햄버거 토글
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      const target = parseInt(link.dataset.section);
+      goTo(target);
+    });
+  });
+}
