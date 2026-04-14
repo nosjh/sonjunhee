@@ -67,8 +67,8 @@ function goTo(target) {
 
   const wrap = document.getElementById('wrap');
   wrap.style.transition = target === total - 1
-    ? 'transform 1.3s cubic-bezier(1,0,0,1)'
-    : 'transform 1.2s linear';
+    ? 'transform 1.1s linear'
+    : 'transform 1.1s linear';
 
   cur = target;
   wrap.style.transform = `translateX(-${cur * 100}vw)`;
@@ -78,7 +78,7 @@ function goTo(target) {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      panel.style.transition = 'transform 1.25s linear';
+      panel.style.transition = 'transform 1.2s linear';
       panel.style.transform = direction === 1 ? 'translateX(-100%)' : 'translateX(100%)';
     });
   });

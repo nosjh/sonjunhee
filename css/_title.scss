@@ -15,8 +15,8 @@
   color: $orange;
   height: 90vmin;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  transform: translate(0%, 0%);
   width: 90vmin;
 }
 .animated-title > div {
@@ -26,7 +26,7 @@
   width: 100%;
 }
 .animated-title > div div {
-  font-size: 12vmin;
+  font-size: 16vmin;
   position: absolute;
 }
 .animated-title > div div span {
