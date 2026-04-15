@@ -25,8 +25,6 @@ $desktop: 1024px;
 //풀페이지
 
 html, body {
-  font-size: 100%;
-  margin: 0;
   overflow: hidden;
 }
 
@@ -39,8 +37,8 @@ html, body {
 }
 
 .section {
-  background-color: #252540;
-  color: #E8A87C;
+  background-color: $navy;
+  color: $beige;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -51,8 +49,8 @@ html, body {
   overflow: hidden;
 
   &:nth-child(4) {
-    background-color: #E8A87C;
-    color: #252540;
+    background-color: $beige;
+    color: $navy;
   }
 }
 
@@ -91,7 +89,7 @@ $black: #222222;
 $navy: #252540;
 $navy2: #1E1E35;
 $navy3: #777797;
-$orange: #E8A87C;
+$beige: #E8A87C;
 $green: #7EC89B;
 $mint: #7CE8D8;
 $blue: #7CAAE8;
@@ -103,7 +101,7 @@ $blue: #7CAAE8;
   top: 0;
   width: 125%;
   height: 100%;
-  background: $orange;
+  background: $beige;
   transform: translateX(100%);
   z-index: 2;
   pointer-events: none;

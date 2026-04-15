@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 html, body {
-  font-size: 100%;
-  margin: 0;
   overflow: hidden;
 }
 
@@ -95,11 +93,12 @@ html, body {
 }
 .animated-title {
   color: #E8A87C;
-  height: 90vmin;
+  height: 100%;
   position: absolute;
   top: 0;
   transform: translate(0%, 0%);
-  width: 90vmin;
+  width: 100%;
+  font-size: 6rem;
 }
 
 .animated-title > div {
@@ -110,7 +109,6 @@ html, body {
 }
 
 .animated-title > div div {
-  font-size: 16vmin;
   position: absolute;
 }
 
@@ -156,6 +154,7 @@ header > div {
 
 .logo {
   color: #252540;
+  font-size: 2.2rem;
 }
 
 .hamburger {
@@ -165,8 +164,8 @@ header > div {
   .hamburger {
     display: inline-block;
     position: relative;
-    width: 50px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
     cursor: pointer;
@@ -185,15 +184,15 @@ header > div {
   transition: 0.2s;
 }
 .hamburger::before {
-  top: 3px;
-  left: 8px;
+  top: 4px;
+  left: 6px;
   transform-origin: 0 0;
   transform: rotate(45deg) scaleX(0);
   transition-delay: 0s;
 }
 .hamburger::after {
-  top: 3px;
-  right: 9px;
+  top: 4px;
+  right: 6px;
   transform-origin: 100% 0;
   transform: rotate(-45deg) scaleX(0);
   transition-delay: 0.2s;
@@ -205,7 +204,7 @@ header > div {
   transition-delay: 0.5s;
 }
 .hamburger span:nth-of-type(2) {
-  top: 20px;
+  top: 14px;
   left: 0;
   transform-origin: 50% 50%;
   transition-delay: 0.5s;
@@ -252,6 +251,7 @@ ul li a {
   color: #252540;
   transition: 0.5s;
   z-index: 1;
+  font-size: 1rem;
 }
 ul li a:after {
   content: "";
@@ -267,7 +267,7 @@ ul li a:after {
   z-index: -1;
 }
 ul li a:hover {
-  color: #E8A87C;
+  color: #E8A87C !important;
 }
 ul li a:hover:after {
   transform: scaleY(1);
@@ -286,7 +286,7 @@ ul li a:hover:after {
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
-  transition: transform 1s linear;
+  transition: transform 0.6s linear;
 }
 .mobile-nav.active {
   transform: translateY(0);
@@ -311,4 +311,14 @@ ul li a:hover:after {
 .mobile-nav ul li a.current {
   background-color: #252540;
   color: #E8A87C;
+}
+@media (min-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobile-nav {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */
