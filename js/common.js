@@ -53,7 +53,7 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('active');
 });
 
-// 모바일 메뉴 링크 클릭 시 닫기
+// 모바일 메뉴
 document.querySelectorAll('.mobile-nav a').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
