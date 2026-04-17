@@ -15,7 +15,7 @@ html, body {
 
 .section {
   background-color: #252540;
-  color: #E8A87C;
+  color: #F2E9D8;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -24,6 +24,10 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+.section:nth-child(2) {
+  background-image: url(../img/Sprite-02.svg);
+  background-size: cover;
 }
 .section:nth-child(4) {
   background-color: #E8A87C;
@@ -98,7 +102,12 @@ html, body {
   top: 0;
   transform: translate(0%, 0%);
   width: 100%;
-  font-size: 6rem;
+  font-size: 5.6rem;
+}
+@media (max-width: 767px) {
+  .animated-title {
+    font-size: 3rem;
+  }
 }
 
 .animated-title > div {
@@ -144,8 +153,7 @@ header > div {
   padding: 0 clamp(20px, 12.5vw, 240px);
   width: 100%;
   height: 80px;
-  border-bottom: 2px solid #ffffff;
-  color: #ffffff;
+  border-bottom: 2px solid #F2E9D8;
   z-index: 3;
   display: flex;
   align-items: center;

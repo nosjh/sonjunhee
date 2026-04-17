@@ -63,3 +63,7 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
     mobileNav.classList.remove('active');
   });
 });
+
+const headerHeight = document.querySelector('.header').offsetHeight;
+const contentHeight = window.innerHeight - headerHeight;
+console.log(window.innerWidth, contentHeight);

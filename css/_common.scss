@@ -37,8 +37,8 @@ html, body {
 }
 
 .section {
-  background-color: $navy;
-  color: $beige;
+  background-color: #252540;
+  color: #F2E9D8;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -47,10 +47,19 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  
+  // &:nth-child(1) {
+  //   background-image: url(../img/Sprite-01.svg);
+  //   background-size: cover;
+  // }
 
+  &:nth-child(2) {
+    background-image: url(../img/Sprite-02.svg);
+    background-size: cover;
+  }
   &:nth-child(4) {
-    background-color: $beige;
-    color: $navy;
+    background-color: #E8A87C;
+    color: #252540;
   }
 }
 
@@ -90,7 +99,7 @@ $navy: #252540;
 $navy2: #1E1E35;
 $navy3: #777797;
 $beige: #E8A87C;
-$beige2: #f9e9de;
+$beige2: #F2E9D8;
 $green: #7EC89B;
 $mint: #7CE8D8;
 $blue: #7CAAE8;
