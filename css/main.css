@@ -25,8 +25,16 @@ html, body {
   justify-content: center;
   overflow: hidden;
 }
+.section:nth-child(1) {
+  background-image: url(../img/desktop01.svg);
+  background-size: cover;
+}
 .section:nth-child(2) {
-  background-image: url(../img/Sprite-02.svg);
+  background-image: url(../img/desktop02.svg);
+  background-size: cover;
+}
+.section:nth-child(3) {
+  background-image: url(../img/desktop02.svg);
   background-size: cover;
 }
 .section:nth-child(4) {
@@ -163,6 +171,7 @@ header > div {
 .logo {
   color: #252540;
   font-size: 2.2rem;
+  cursor: pointer;
 }
 
 .hamburger {

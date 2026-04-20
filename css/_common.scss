@@ -48,13 +48,16 @@ html, body {
   justify-content: center;
   overflow: hidden;
   
-  // &:nth-child(1) {
-  //   background-image: url(../img/Sprite-01.svg);
-  //   background-size: cover;
-  // }
-
+  &:nth-child(1) {
+    background-image: url(../img/desktop01.svg);
+    background-size: cover;
+  }
   &:nth-child(2) {
-    background-image: url(../img/Sprite-02.svg);
+    background-image: url(../img/desktop02.svg);
+    background-size: cover;
+  }
+  &:nth-child(3) {
+    background-image: url(../img/desktop02.svg);
     background-size: cover;
   }
   &:nth-child(4) {
