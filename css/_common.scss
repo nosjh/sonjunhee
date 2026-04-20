@@ -109,8 +109,8 @@ $blue: #7CAAE8;
 .panel {
   position: fixed;
   top: 0;
-  width: 125%;
-  height: 100%;
+  width: 150vw;
+  height: 100vh;
   background: $beige;
   transform: translateX(100%);
   z-index: 2;

@@ -2,3 +2,6 @@
 
 wow-master
 swipe
+
+photoshop, illustrator, figma
+html, css ,js ,react
