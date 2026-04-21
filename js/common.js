@@ -11,8 +11,8 @@ function goTo(target) {
 
   const wrap = document.getElementById('wrap');
   wrap.style.transition = target === total - 1
-    ? 'transform 1.1s linear'
-    : 'transform 1.1s linear';
+    ? 'transform 1.1s ease-in-out'
+    : 'transform 1.1s ease-in-out';
 
   cur = target;
   wrap.style.transform = `translateX(-${cur * 100}vw)`;

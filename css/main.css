@@ -29,13 +29,37 @@ html, body {
   background-image: url(../img/desktop01.svg);
   background-size: cover;
 }
+@media (min-width: 768px) and (max-width: 1366px) {
+  .section:nth-child(1) {
+    background-image: url(../img/tablet01.svg);
+    background-size: cover;
+  }
+}
+@media (max-width: 767px) {
+  .section:nth-child(1) {
+    background-image: url(../img/mobile01.svg);
+    background-size: cover;
+  }
+}
 .section:nth-child(2) {
   background-image: url(../img/desktop02.svg);
   background-size: cover;
 }
+@media (max-width: 767px) {
+  .section:nth-child(2) {
+    background-image: url(../img/mobile02.svg);
+    background-size: cover;
+  }
+}
 .section:nth-child(3) {
   background-image: url(../img/desktop02.svg);
   background-size: cover;
+}
+@media (max-width: 767px) {
+  .section:nth-child(3) {
+    background-image: url(../img/mobile02.svg);
+    background-size: cover;
+  }
 }
 .section:nth-child(4) {
   background-color: #E8A87C;
@@ -67,8 +91,8 @@ html, body {
 .panel {
   position: fixed;
   top: 0;
-  width: 150vw;
-  height: 100vh;
+  width: 150%;
+  height: 100%;
   background: #E8A87C;
   transform: translateX(100%);
   z-index: 2;
@@ -329,12 +353,12 @@ ul li a:hover:after {
   background-color: #252540;
   color: #E8A87C;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1367px) {
   .mobile-nav {
     display: none;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1366px) {
   .mobile-nav {
     display: none;
   }

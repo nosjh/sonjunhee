@@ -4,6 +4,6 @@ wow-master
 swipe
 
 photoshop, illustrator, figma
-html, css ,js ,react
+html/css ,js ,react
 
 마우스 포인터
