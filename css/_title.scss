@@ -19,6 +19,8 @@
   transform: translate(0%, 0%);
   width: 100%;
   font-size: 5.6rem;
+  letter-spacing: 0.15em;
+  
 
   @include mobile {
     font-size: 3rem;

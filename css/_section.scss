@@ -1,0 +1,62 @@
+@use 'common' as *;
+
+.section {
+  background-color: $navy;
+  color: $beige;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  &:nth-child(1) {
+    background-image: url(../img/desktop01.svg);
+    background-size: cover;
+    @include tablet {
+      background-image: url(../img/tablet01.svg);
+      background-size: cover;
+    }
+    @include mobile {
+      background-image: url(../img/mobile01.svg);
+      background-size: cover;
+    }
+  }
+  &:nth-child(2) {
+    background-image: url(../img/desktop02.svg);
+    background-size: cover;
+    @include mobile {
+      background-image: url(../img/mobile02.svg);
+      background-size: cover;
+    }
+  }
+  &:nth-child(3) {
+    background-image: url(../img/desktop02.svg);
+    background-size: cover;
+    @include mobile {
+      background-image: url(../img/mobile02.svg);
+      background-size: cover;
+    }
+  }
+  &:nth-child(4) {
+    background-color: $beige;
+    color: $navy;
+  }
+}
+
+.section p {
+  display: inline;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+  background-image: linear-gradient(grey, grey);
+  transition: background-size 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.section.animate p {
+  color: black;
+  background-size: 0% 100%;
+}

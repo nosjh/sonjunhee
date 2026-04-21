@@ -13,62 +13,9 @@ html, body {
   transition: transform 1.2s linear;
 }
 
-.section {
-  background-color: #252540;
-  color: #F2E9D8;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.section:nth-child(1) {
-  background-image: url(../img/desktop01.svg);
-  background-size: cover;
-}
-@media (min-width: 768px) and (max-width: 1366px) {
-  .section:nth-child(1) {
-    background-image: url(../img/tablet01.svg);
-    background-size: cover;
-  }
-}
-@media (max-width: 767px) {
-  .section:nth-child(1) {
-    background-image: url(../img/mobile01.svg);
-    background-size: cover;
-  }
-}
-.section:nth-child(2) {
-  background-image: url(../img/desktop02.svg);
-  background-size: cover;
-}
-@media (max-width: 767px) {
-  .section:nth-child(2) {
-    background-image: url(../img/mobile02.svg);
-    background-size: cover;
-  }
-}
-.section:nth-child(3) {
-  background-image: url(../img/desktop02.svg);
-  background-size: cover;
-}
-@media (max-width: 767px) {
-  .section:nth-child(3) {
-    background-image: url(../img/mobile02.svg);
-    background-size: cover;
-  }
-}
-.section:nth-child(4) {
-  background-color: #E8A87C;
-  color: #252540;
-}
-
 .container {
   width: 100%;
-  padding: 0 clamp(20px, 12.5vw, 240px);
+  margin: 0 clamp(20px, 15vw, 300px);
 }
 
 .tiny5-regular {
@@ -135,6 +82,7 @@ html, body {
   transform: translate(0%, 0%);
   width: 100%;
   font-size: 5.6rem;
+  letter-spacing: 0.15em;
 }
 @media (max-width: 767px) {
   .animated-title {
@@ -177,12 +125,80 @@ html, body {
   transform: translate(0, -100%);
 }
 
+.section {
+  background-color: #252540;
+  color: #E8A87C;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.section:nth-child(1) {
+  background-image: url(../img/desktop01.svg);
+  background-size: cover;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .section:nth-child(1) {
+    background-image: url(../img/tablet01.svg);
+    background-size: cover;
+  }
+}
+@media (max-width: 767px) {
+  .section:nth-child(1) {
+    background-image: url(../img/mobile01.svg);
+    background-size: cover;
+  }
+}
+.section:nth-child(2) {
+  background-image: url(../img/desktop02.svg);
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .section:nth-child(2) {
+    background-image: url(../img/mobile02.svg);
+    background-size: cover;
+  }
+}
+.section:nth-child(3) {
+  background-image: url(../img/desktop02.svg);
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .section:nth-child(3) {
+    background-image: url(../img/mobile02.svg);
+    background-size: cover;
+  }
+}
+.section:nth-child(4) {
+  background-color: #E8A87C;
+  color: #252540;
+}
+
+.section p {
+  display: inline;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 100%;
+  background-image: linear-gradient(grey, grey);
+  transition: background-size 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.section.animate p {
+  color: black;
+  background-size: 0% 100%;
+}
+
 header > div {
   box-sizing: border-box;
   background-color: #E8A87C;
   position: fixed;
   top: 0;
-  padding: 0 clamp(20px, 12.5vw, 240px);
+  padding: 0 clamp(20px, 15vw, 300px);
   width: 100%;
   height: 60px;
   border-bottom: 2px solid #F2E9D8;

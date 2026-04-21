@@ -9,6 +9,7 @@ function goTo(target) {
 
   const direction = target > cur ? 1 : -1;
 
+  // 섹션
   const wrap = document.getElementById('wrap');
   wrap.style.transition = target === total - 1
     ? 'transform 1.1s ease-in-out'
@@ -17,6 +18,7 @@ function goTo(target) {
   cur = target;
   wrap.style.transform = `translateX(-${cur * 100}vw)`;
 
+  // 패널
   panel.style.transition = 'none';
   panel.style.transform = direction === 1 ? 'translateX(100%)' : 'translateX(-100%)';
 
@@ -28,6 +30,13 @@ function goTo(target) {
   });
 
   setTimeout(() => { busy = false; }, 600);
+
+  // 텍스트 효과
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('animate'));
+
+  setTimeout(() => {
+  document.querySelectorAll('.section')[target].classList.add('animate');
+  }, 1200);
 }
 
 window.addEventListener('wheel', (e) => {
