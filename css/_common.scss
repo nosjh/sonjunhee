@@ -38,57 +38,6 @@ html, body {
   transition: transform 1.2s linear;
 }
 
-// .section {
-//   background-color: #252540;
-//   color: #F2E9D8;
-//   position: relative;
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   flex-shrink: 0;
-//   align-items: center;
-//   justify-content: center;
-//   overflow: hidden;
-  
-//   &:nth-child(1) {
-//     background-image: url(../img/desktop01.svg);
-//     background-size: cover;
-//     @include tablet {
-//       background-image: url(../img/tablet01.svg);
-//       background-size: cover;
-//     }
-//     @include mobile {
-//       background-image: url(../img/mobile01.svg);
-//       background-size: cover;
-//     }
-//   }
-//   &:nth-child(2) {
-//     background-image: url(../img/desktop02.svg);
-//     background-size: cover;
-//     @include mobile {
-//       background-image: url(../img/mobile02.svg);
-//       background-size: cover;
-//     }
-//   }
-//   &:nth-child(3) {
-//     background-image: url(../img/desktop02.svg);
-//     background-size: cover;
-//     @include mobile {
-//       background-image: url(../img/mobile02.svg);
-//       background-size: cover;
-//     }
-//   }
-//   &:nth-child(4) {
-//     background-color: #E8A87C;
-//     color: #252540;
-//   }
-// }
-
-.container {
-  width: 100%;
-  margin: 0 clamp(20px, 15vw, 300px);
-}
-
 // 폰트
 
 @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');

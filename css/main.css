@@ -13,11 +13,6 @@ html, body {
   transition: transform 1.2s linear;
 }
 
-.container {
-  width: 100%;
-  margin: 0 clamp(20px, 15vw, 300px);
-}
-
 .tiny5-regular {
   font-family: "Tiny5", sans-serif;
   font-weight: 400;
@@ -74,7 +69,7 @@ html, body {
     transform: translate3d(0, 0, 0);
   }
 }
-.animated-title {
+.animate-title {
   color: #E8A87C;
   height: 100%;
   position: absolute;
@@ -85,27 +80,28 @@ html, body {
   letter-spacing: 0.15em;
 }
 @media (max-width: 767px) {
-  .animated-title {
+  .animate-title {
     font-size: 3rem;
+    letter-spacing: 0;
   }
 }
 
-.animated-title > div {
+.animate-title > div {
   height: 50%;
   overflow: hidden;
   position: absolute;
   width: 100%;
 }
 
-.animated-title > div div {
+.animate-title > div div {
   position: absolute;
 }
 
-.animated-title > div div span {
+.animate-title > div div span {
   display: block;
 }
 
-.animated-title > div.text-top div {
+.animate-title > div.text-top div {
   animation: showTopText 1s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
@@ -113,11 +109,11 @@ html, body {
   transform: translate(0, 100%);
 }
 
-.animated-title > div.text-bottom {
+.animate-title > div.text-bottom {
   bottom: 0;
 }
 
-.animated-title > div.text-bottom div {
+.animate-title > div.text-bottom div {
   animation: showBottomText 1s;
   animation-delay: 2.25s;
   animation-fill-mode: forwards;
@@ -153,22 +149,12 @@ html, body {
     background-size: cover;
   }
 }
-.section:nth-child(2) {
+.section:nth-child(2), .section:nth-child(3) {
   background-image: url(../img/desktop02.svg);
   background-size: cover;
 }
 @media (max-width: 767px) {
-  .section:nth-child(2) {
-    background-image: url(../img/mobile02.svg);
-    background-size: cover;
-  }
-}
-.section:nth-child(3) {
-  background-image: url(../img/desktop02.svg);
-  background-size: cover;
-}
-@media (max-width: 767px) {
-  .section:nth-child(3) {
+  .section:nth-child(2), .section:nth-child(3) {
     background-image: url(../img/mobile02.svg);
     background-size: cover;
   }
@@ -178,18 +164,29 @@ html, body {
   color: #252540;
 }
 
-.section p {
+.container {
+  width: 100%;
+  margin: 0 clamp(40px, 11vw, 300px);
+}
+
+.section:nth-child(2) .container, .section:nth-child(3) .container {
+  margin: 0 clamp(40px, 11vw, 300px);
+  padding: clamp(20px, 3vh, 50px) clamp(10px, 3vw, 50px);
+}
+
+.container p {
+  line-height: 1.5;
   display: inline;
   color: transparent;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 100% 100%;
-  background-image: linear-gradient(grey, grey);
-  transition: background-size 0.5s ease-in-out, color 0.5s ease-in-out;
+  background-image: linear-gradient(#F2E9D8, #F2E9D8);
+  transition: background-size 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
-.section.animate p {
-  color: black;
+.container.animate p {
+  color: #F2E9D8;
   background-size: 0% 100%;
 }
 
@@ -198,7 +195,7 @@ header > div {
   background-color: #E8A87C;
   position: fixed;
   top: 0;
-  padding: 0 clamp(20px, 15vw, 300px);
+  padding: 0 clamp(40px, 11vw, 300px);
   width: 100%;
   height: 60px;
   border-bottom: 2px solid #F2E9D8;

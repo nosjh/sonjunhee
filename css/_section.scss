@@ -24,15 +24,7 @@
       background-size: cover;
     }
   }
-  &:nth-child(2) {
-    background-image: url(../img/desktop02.svg);
-    background-size: cover;
-    @include mobile {
-      background-image: url(../img/mobile02.svg);
-      background-size: cover;
-    }
-  }
-  &:nth-child(3) {
+  &:nth-child(2), &:nth-child(3) {
     background-image: url(../img/desktop02.svg);
     background-size: cover;
     @include mobile {
@@ -46,17 +38,33 @@
   }
 }
 
-.section p {
+.container {
+  width: 100%;
+  margin: 0 clamp(40px, 11vw, 300px);
+}
+
+.section {
+  &:nth-child(2),
+  &:nth-child(3) {
+    .container {
+      margin: 0 clamp(40px, 11vw, 300px);
+      padding: clamp(20px, 3vh, 50px) clamp(10px, 3vw, 50px);
+    }
+  }
+}
+
+.container p {
+  line-height: 1.5;
   display: inline;
   color: transparent;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 100% 100%;
-  background-image: linear-gradient(grey, grey);
-  transition: background-size 0.5s ease-in-out, color 0.5s ease-in-out;
+  background-image: linear-gradient($beige2, $beige2);
+  transition: background-size 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
-.section.animate p {
-  color: black;
+.container.animate p {
+  color: $beige2;
   background-size: 0% 100%;
 }

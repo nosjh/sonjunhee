@@ -32,10 +32,10 @@ function goTo(target) {
   setTimeout(() => { busy = false; }, 600);
 
   // 텍스트 효과
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('animate'));
+  document.querySelectorAll('.container').forEach(s => s.classList.remove('animate'));
 
   setTimeout(() => {
-  document.querySelectorAll('.section')[target].classList.add('animate');
+  document.querySelectorAll('.container')[target].classList.add('animate');
   }, 1200);
 }
 
