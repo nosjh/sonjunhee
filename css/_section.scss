@@ -40,15 +40,22 @@
 
 .container {
   width: 100%;
-  margin: 0 clamp(40px, 11vw, 300px);
+  margin: 0 18.75rem;
+
+  @include tablet {
+    margin: 0 10rem;
+  }
+
+  @include mobile {
+    margin: 0 2.5rem;
+  }
 }
 
 .section {
   &:nth-child(2),
   &:nth-child(3) {
     .container {
-      margin: 0 clamp(40px, 11vw, 300px);
-      padding: clamp(20px, 3vh, 50px) clamp(10px, 3vw, 50px);
+      padding: 2.5rem 2.5rem;
     }
   }
 }

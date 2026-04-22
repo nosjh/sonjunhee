@@ -73,6 +73,4 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
   });
 });
 
-const headerHeight = document.querySelector('.header').offsetHeight;
-const contentHeight = window.innerHeight - headerHeight;
-console.log(window.innerWidth, contentHeight);
+console.log(getComputedStyle(document.querySelector('.container')).marginLeft);
