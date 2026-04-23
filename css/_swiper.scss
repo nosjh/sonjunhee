@@ -1,0 +1,15 @@
+@use 'common' as *;
+
+.swiper {
+  width: 70vw;
+  height: 46vh;
+  background-color: azure;
+}
+
+.swiper > .swiper-pagination-bullet {
+    color: $beige3;
+}
+
+.swiper > .swiper-pagination-bullet-active {
+    color: $beige;
+}

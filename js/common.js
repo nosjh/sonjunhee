@@ -1,5 +1,6 @@
 let cur = 0;
 let busy = false;
+
 const total = document.querySelectorAll('.section').length;
 const panel = document.querySelector('.panel');
 
@@ -74,3 +75,15 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 });
 
 console.log(getComputedStyle(document.querySelector('.container')).marginLeft);
+
+swiper = new Swiper('.swiper', {
+  loop: true,
+  mousewheel: true,
+  keyboard: { enabled: true },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: {
+    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next',
+  },
+  
+});
