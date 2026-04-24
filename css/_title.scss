@@ -19,7 +19,7 @@
   transform: translate(0%, 0%);
   width: 100%;
   font-size: 5.6rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1rem;
   
   @include mobile {
     font-size: 3rem;
@@ -56,4 +56,78 @@
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+// 
+
+// .intro-img {
+//   position: absolute;
+//   display: block;
+//   left: 30%;
+//   top: 0;
+//   z-index: 1;
+//   transform: translateY(100%);
+//   animation-delay: 3.25s;
+
+//   img {
+//     height: 70vh;
+//     width: auto;
+//   }
+
+//   &.show {
+//     animation: showTopText 1s forwards;
+//   }
+
+//   @include mobile {
+//     left: 40%;
+//     top: 20%;
+//     img { height: 50vh; }
+//   }
+
+//   @include tablet {
+//     left: 40%;
+//     top: 15%;
+//     img { height: 60vh; }
+//   }
+// }
+
+.animate-title > div.text-right {
+  left: 60%;
+  top: 25%;
+  height: 75%;
+  
+  @include tablet {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    height: auto;
+  }
+
+  @include mobile {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    height: auto;
+  }
+}
+
+.animate-title > div.text-right div {
+  animation: showTopText 1s forwards;
+  animation-delay: 3.25s;
+  top: 0;
+  transform: translate(0, 100%);
+
+  span {
+    display: inline; 
+
+    @include tablet {
+      display: inline;
+      &::after { content: ' '; } 
+    }
+
+    @include mobile {
+      display: inline;
+      &::after { content: ' '; }
+    }
+  }
 }

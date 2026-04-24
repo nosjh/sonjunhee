@@ -264,7 +264,7 @@ ul li a:hover:after {
   transform: translate(0%, 0%);
   width: 100%;
   font-size: 5.6rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1rem;
 }
 @media (max-width: 767px) {
   .animate-title {
@@ -306,6 +306,54 @@ ul li a:hover:after {
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+.animate-title > div.text-right {
+  left: 60%;
+  top: 25%;
+  height: 75%;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .animate-title > div.text-right {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .animate-title > div.text-right {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    height: auto;
+  }
+}
+
+.animate-title > div.text-right div {
+  animation: showTopText 1s forwards;
+  animation-delay: 3.25s;
+  top: 0;
+  transform: translate(0, 100%);
+}
+.animate-title > div.text-right div span {
+  display: inline;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .animate-title > div.text-right div span {
+    display: inline;
+  }
+  .animate-title > div.text-right div span::after {
+    content: " ";
+  }
+}
+@media (max-width: 767px) {
+  .animate-title > div.text-right div span {
+    display: inline;
+  }
+  .animate-title > div.text-right div span::after {
+    content: " ";
+  }
 }
 
 .section {
@@ -356,8 +404,18 @@ ul li a:hover:after {
   margin: 0 clamp(40px, 40px + 260 * (100vw - 767px) / 600, 300px);
 }
 
+.section:nth-child(2) .container {
+  position: relative;
+  top: -4vh;
+  padding: 0 40px;
+}
+.section:nth-child(3) .container {
+  position: relative;
+  top: -1.2vh;
+}
+
 .container p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   display: inline;
   line-height: 1.6;
   color: transparent;
@@ -403,6 +461,7 @@ ul li a:hover:after {
 
 .skill-name {
   width: 100px;
+  font-size: 0.875rem;
 }
 
 .bar-outer {
@@ -413,6 +472,11 @@ ul li a:hover:after {
   margin-top: 4px;
   padding: 3px;
   background-color: #252540;
+}
+@media (max-width: 767px) {
+  .bar-outer {
+    width: 75%;
+  }
 }
 
 .bar-inner {
@@ -443,8 +507,14 @@ ul li a:hover:after {
 
 .swiper {
   width: 70vw;
-  height: 46vh;
-  background-color: azure;
+  height: 52vh;
+  background-color: #252540;
+}
+@media (max-width: 767px) {
+  .swiper {
+    margin-top: 8px;
+    height: 60vh;
+  }
 }
 
 .swiper > .swiper-pagination-bullet {
