@@ -30,6 +30,18 @@ html, body {
   font-style: normal;
 }
 
+* {
+  cursor: url("../img/cursor-default.svg") 0 0, auto;
+}
+
+a, button {
+  cursor: url("../img/cursor-pointer.svg") 0 0, pointer;
+}
+
+p, span, input, textarea {
+  cursor: url("../img/cursor-text.svg") 0 0, text;
+}
+
 .panel {
   position: fixed;
   top: 0;
@@ -256,10 +268,41 @@ ul li a:hover:after {
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes showTop {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.intro-wrap {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .intro-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 767px) {
+  .intro-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .animate-title {
+  flex: 1;
   color: #E8A87C;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   transform: translate(0%, 0%);
   width: 100%;
@@ -276,12 +319,12 @@ ul li a:hover:after {
 .animate-title > div {
   height: 50%;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
 .animate-title > div div {
-  position: absolute;
+  position: relative;
 }
 
 .animate-title > div div span {
@@ -308,51 +351,66 @@ ul li a:hover:after {
   transform: translate(0, -100%);
 }
 
-.animate-title > div.text-right {
-  left: 60%;
-  top: 25%;
-  height: 75%;
+.text-right {
+  flex: 2;
+  padding-left: 2rem;
+  position: relative;
+  top: 0;
+  height: 100%;
+  color: #E8A87C;
+  font-size: 5.6rem;
+  letter-spacing: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: showTop 1s both;
+  animation-delay: 3.25s;
 }
 @media (min-width: 768px) and (max-width: 1366px) {
-  .animate-title > div.text-right {
-    left: 0;
-    top: auto;
-    bottom: 0;
-    height: auto;
+  .text-right {
+    z-index: 2;
+  }
+  .text-right span:first-child {
+    display: none;
+  }
+  .text-right {
+    padding-left: 0;
+    font-size: 3rem;
+    flex-direction: row;
+    gap: 0.4rem;
+    align-items: flex-start;
   }
 }
 @media (max-width: 767px) {
-  .animate-title > div.text-right {
-    left: 0;
-    top: auto;
-    bottom: 0;
-    height: auto;
+  .text-right {
+    z-index: 2;
+  }
+  .text-right span:first-child {
+    display: none;
+  }
+  .text-right {
+    padding-left: 0;
+    font-size: 1.25rem;
+    flex-direction: row;
+    gap: 0.4rem;
   }
 }
 
-.animate-title > div.text-right div {
-  animation: showTopText 1s forwards;
+.intro-img {
+  position: absolute;
+  left: 14rem;
+  height: 100%;
+  z-index: 1;
+  animation: showTop 1s both;
   animation-delay: 3.25s;
-  top: 0;
-  transform: translate(0, 100%);
 }
-.animate-title > div.text-right div span {
-  display: inline;
-}
-@media (min-width: 768px) and (max-width: 1366px) {
-  .animate-title > div.text-right div span {
-    display: inline;
-  }
-  .animate-title > div.text-right div span::after {
-    content: " ";
-  }
+.intro-img img {
+  height: 100%;
+  width: auto;
 }
 @media (max-width: 767px) {
-  .animate-title > div.text-right div span {
-    display: inline;
-  }
-  .animate-title > div.text-right div span::after {
-    content: " ";
+  .intro-img {
+    left: 5.2rem;
   }
 }
 
@@ -387,6 +445,12 @@ ul li a:hover:after {
 .section:nth-child(2), .section:nth-child(3) {
   background-image: url(../img/desktop02.svg);
   background-size: cover;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .section:nth-child(2), .section:nth-child(3) {
+    background-image: url(../img/tablet02.svg);
+    background-size: cover;
+  }
 }
 @media (max-width: 767px) {
   .section:nth-child(2), .section:nth-child(3) {
@@ -443,8 +507,8 @@ ul li a:hover:after {
   grid-auto-flow: column;
   grid-template-rows: repeat(3, auto);
   row-gap: 20px;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   padding-top: 20px;
 }
 @media (max-width: 767px) {
@@ -466,12 +530,18 @@ ul li a:hover:after {
 
 .bar-outer {
   width: 100%;
-  max-width: 300px;
+  max-width: 360px;
   height: 6px;
   border: 2px solid #665054;
   margin-top: 4px;
   padding: 3px;
   background-color: #252540;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .bar-outer {
+    width: 75%;
+    max-width: 200px;
+  }
 }
 @media (max-width: 767px) {
   .bar-outer {
@@ -507,8 +577,15 @@ ul li a:hover:after {
 
 .swiper {
   width: 70vw;
-  height: 52vh;
+  height: 50vh;
   background-color: #252540;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .swiper {
+    padding-top: -1rem;
+    width: 56vw;
+    height: 38vh;
+  }
 }
 @media (max-width: 767px) {
   .swiper {

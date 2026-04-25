@@ -1,5 +1,21 @@
 let cur = 0;
 let busy = false;
+let touchStartX = 0;
+
+window.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+window.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  
+  if (Math.abs(diff) > 50) { 
+    if (diff > 0) goTo(cur + 1); 
+    else goTo(cur - 1);          
+  }
+});
+
+//
 
 const total = document.querySelectorAll('.section').length;
 const panel = document.querySelector('.panel');
@@ -74,16 +90,19 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
   });
 });
 
-console.log(getComputedStyle(document.querySelector('.container')).marginLeft);
-
+//스와이퍼
 swiper = new Swiper('.swiper', {
   loop: true,
-  mousewheel: true,
+  mousewheel: false,
   keyboard: { enabled: true },
   pagination: { el: '.swiper-pagination', clickable: true },
   navigation: {
     prevEl: '.swiper-button-prev',
     nextEl: '.swiper-button-next',
   },
-  
+  autoplay: {
+      delay: 3000,
+  },
+  speed: 800,
+  slidesPerView: "auto",
 });

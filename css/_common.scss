@@ -75,6 +75,20 @@ $green: #7EC89B;
 $mint: #7CE8D8;
 $blue: #7CAAE8;
 
+
+// 마우스 커서
+* {
+  cursor: url('../img/cursor-default.svg') 0 0, auto;
+}
+
+a, button {
+  cursor: url('../img/cursor-pointer.svg') 0 0, pointer;
+}
+
+p, span, input, textarea {
+  cursor: url('../img/cursor-text.svg') 0 0, text;
+}
+
 // 패널
 
 .panel {

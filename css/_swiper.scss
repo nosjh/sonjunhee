@@ -2,8 +2,13 @@
 
 .swiper {
   width: 70vw;
-  height: 52vh;
+  height: 50vh;
   background-color: $navy;
+  @include tablet {
+    padding-top: -1rem;
+    width: 56vw;
+    height: 38vh;
+  }
   @include mobile {
     margin-top: 8px;
     height: 60vh;
