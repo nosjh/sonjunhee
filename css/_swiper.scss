@@ -2,12 +2,13 @@
 
 .swiper {
   width: 70vw;
-  height: 50vh;
+  height: 51vh;
+  margin-top: -1.4rem;
   background-color: $navy;
   @include tablet {
-    padding-top: -1rem;
+    margin-top: -6.2rem;
     width: 56vw;
-    height: 38vh;
+    height: 33vh;
   }
   @include mobile {
     margin-top: 8px;
@@ -15,10 +16,78 @@
   }
 }
 
-.swiper > .swiper-pagination-bullet {
-  color: $beige3;
+.swiper-slide {
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+
+  &:first-child a {
+    background-image: url('../img/swiper-desktop01.png');
+
+    @include tablet {
+      background-image: url('../img/swiper-tablet01.png');
+    }
+    @include mobile {
+      background-image: url('../img/swiper-mobile01.png');
+      background-position: center;
+    }
+  }
+
+  &:nth-child(2) a {
+    background-image: url('../img/swiper-desktop02.png');
+
+    @include tablet {
+      background-image: url('../img/swiper-tablet02.png');
+    }
+    @include mobile {
+      background-image: url('../img/swiper-mobile02.png');
+      background-position: center;
+    }
+  }
 }
 
-.swiper > .swiper-pagination-bullet-active {
-  color: $beige;
+.swiper-pagination {
+  width: 60px;
+  height: 12px;
+  padding-bottom: 0.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 3px solid $navy;
+  box-shadow: 0 0 0 2px $beige; 
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: $beige;
+  width: 40px;
+  transition: width 1s;
+  border-radius: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &::after {
+    display: none;
+  }
+  background-image: url('../img/swiper-arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  @include mobile {
+    margin: 0 -0.75rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.swiper-button-prev {
+  transform: scaleX(-1); 
 }

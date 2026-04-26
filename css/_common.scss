@@ -81,7 +81,8 @@ $blue: #7CAAE8;
   cursor: url('../img/cursor-default.svg') 0 0, auto;
 }
 
-a, button {
+a, button, .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-pagination-bullet, .swiper-pagination-bullet-active
+{
   cursor: url('../img/cursor-pointer.svg') 0 0, pointer;
 }
 

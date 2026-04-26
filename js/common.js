@@ -92,7 +92,7 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 
 //스와이퍼
 swiper = new Swiper('.swiper', {
-  loop: true,
+  rewind: true,
   mousewheel: false,
   keyboard: { enabled: true },
   pagination: { el: '.swiper-pagination', clickable: true },
@@ -103,6 +103,6 @@ swiper = new Swiper('.swiper', {
   autoplay: {
       delay: 3000,
   },
-  speed: 800,
-  slidesPerView: "auto",
+  speed: 1000,
+  slidesPerView: 1,
 });

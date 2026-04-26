@@ -34,7 +34,7 @@ html, body {
   cursor: url("../img/cursor-default.svg") 0 0, auto;
 }
 
-a, button {
+a, button, .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-pagination-bullet, .swiper-pagination-bullet-active {
   cursor: url("../img/cursor-pointer.svg") 0 0, pointer;
 }
 
@@ -78,6 +78,11 @@ header > div {
   color: #252540;
   font-size: 2.2rem;
   cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .hamburger {
@@ -461,6 +466,20 @@ ul li a:hover:after {
 .section:nth-child(4) {
   background-color: #E8A87C;
   color: #252540;
+  background-image: url(../img/desktop03.svg);
+  background-size: cover;
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .section:nth-child(4) {
+    background-image: url(../img/tablet03.svg);
+    background-size: cover;
+  }
+}
+@media (max-width: 767px) {
+  .section:nth-child(4) {
+    background-image: url(../img/mobile03.svg);
+    background-size: cover;
+  }
 }
 
 .container {
@@ -577,14 +596,15 @@ ul li a:hover:after {
 
 .swiper {
   width: 70vw;
-  height: 50vh;
+  height: 51vh;
+  margin-top: -1.4rem;
   background-color: #252540;
 }
 @media (min-width: 768px) and (max-width: 1366px) {
   .swiper {
-    padding-top: -1rem;
+    margin-top: -6.2rem;
     width: 56vw;
-    height: 38vh;
+    height: 33vh;
   }
 }
 @media (max-width: 767px) {
@@ -594,10 +614,131 @@ ul li a:hover:after {
   }
 }
 
-.swiper > .swiper-pagination-bullet {
-  color: #665054;
+.swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.swiper-slide:first-child a {
+  background-image: url("../img/swiper-desktop01.png");
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .swiper-slide:first-child a {
+    background-image: url("../img/swiper-tablet01.png");
+  }
+}
+@media (max-width: 767px) {
+  .swiper-slide:first-child a {
+    background-image: url("../img/swiper-mobile01.png");
+    background-position: center;
+  }
+}
+.swiper-slide:nth-child(2) a {
+  background-image: url("../img/swiper-desktop02.png");
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .swiper-slide:nth-child(2) a {
+    background-image: url("../img/swiper-tablet02.png");
+  }
+}
+@media (max-width: 767px) {
+  .swiper-slide:nth-child(2) a {
+    background-image: url("../img/swiper-mobile02.png");
+    background-position: center;
+  }
 }
 
-.swiper > .swiper-pagination-bullet-active {
-  color: #E8A87C;
+.swiper-pagination {
+  width: 60px;
+  height: 12px;
+  padding-bottom: 0.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 3px solid #252540;
+  box-shadow: 0 0 0 2px #E8A87C;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #E8A87C;
+  width: 40px;
+  transition: width 1s;
+  border-radius: 10px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-image: url("../img/swiper-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0 -0.75rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.swiper-button-prev {
+  transform: scaleX(-1);
+}
+
+.contact-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.contact-wrap .contact-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 5.6rem;
+  color: #252540;
+  margin-bottom: 3rem;
+}
+@media (max-width: 767px) {
+  .contact-wrap .contact-title {
+    font-size: 2.5rem;
+  }
+}
+.contact-wrap .contact-title span:last-child {
+  font-size: 3rem;
+  padding-top: 0.6rem;
+}
+@media (max-width: 767px) {
+  .contact-wrap .contact-title span:last-child {
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
+  }
+}
+.contact-wrap .contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  font-size: 1.6rem;
+  color: #252540;
+}
+.contact-wrap .contact-info a {
+  color: #252540;
+}
+@media (max-width: 767px) {
+  .contact-wrap .contact-info {
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1rem;
+    margin-top: -1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */

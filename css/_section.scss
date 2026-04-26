@@ -39,6 +39,16 @@
   &:nth-child(4) {
     background-color: $beige;
     color: $navy;
+    background-image: url(../img/desktop03.svg);
+    background-size: cover;
+    @include tablet {
+      background-image: url(../img/tablet03.svg);
+      background-size: cover;
+    }
+    @include mobile {
+      background-image: url(../img/mobile03.svg);
+      background-size: cover;
+    }
   }
 }
 
