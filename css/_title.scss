@@ -1,0 +1,59 @@
+@use 'common' as *;
+
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  40%, 60% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-title {
+  color: $beige;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transform: translate(0%, 0%);
+  width: 100%;
+  font-size: 5.6rem;
+  letter-spacing: 0.1rem;
+  
+  @include mobile {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+}
+.animate-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+.animate-title > div div {
+  position: absolute;
+}
+.animate-title > div div span {
+  display: block;
+}
+
+.animate-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+
+.animate-title > div.text-bottom {
+  bottom: 0;
+}
+.animate-title > div.text-bottom div {
+  animation: showBottomText 1s;
+  animation-delay: 2.25s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
