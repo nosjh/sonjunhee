@@ -461,6 +461,7 @@ ul li a:hover:after {
   .section:nth-child(2), .section:nth-child(3) {
     background-image: url(../img/mobile02.svg);
     background-size: cover;
+    background-position: center;
   }
 }
 .section:nth-child(4) {
@@ -710,22 +711,6 @@ ul li a:hover:after {
   color: #252540;
   margin-bottom: 3rem;
 }
-.contact-wrap .contact-title span {
-  color: transparent;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 100% 100%;
-  background-image: linear-gradient(#252540, #252540);
-  transition: background-size 0.6s ease-in-out, color 0.6s ease-in-out;
-}
-.contact-wrap .contact-title span:nth-child(2) {
-  transition-delay: 0.5s;
-}
-.contact-wrap .contact-title span:nth-child(3) {
-  transition-delay: 1s;
-}
 @media (max-width: 767px) {
   .contact-wrap .contact-title {
     font-size: 2.5rem;
@@ -756,10 +741,9 @@ ul li a:hover:after {
   background-size: 100% 100%;
   background-image: linear-gradient(#252540, #252540);
   transition: background-size 0.6s ease-in-out, color 0.6s ease-in-out;
-  transition-delay: 1.5s;
 }
 .contact-wrap .contact-info a:nth-child(2) {
-  transition-delay: 2s;
+  transition-delay: 0.5s;
 }
 @media (max-width: 767px) {
   .contact-wrap .contact-info {
@@ -770,10 +754,6 @@ ul li a:hover:after {
   }
 }
 
-.container.animate .contact-title span {
-  color: #252540;
-  background-size: 0% 100%;
-}
 .container.animate .contact-info a {
   color: #252540;
   background-size: 0% 100%;
