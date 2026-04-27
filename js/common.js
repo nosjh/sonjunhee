@@ -2,6 +2,8 @@ let cur = 0;
 let busy = false;
 let touchStartX = 0;
 
+//모바일 섹션 전환
+
 window.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
 });
@@ -10,8 +12,8 @@ window.addEventListener('touchend', (e) => {
   const diff = touchStartX - e.changedTouches[0].clientX;
   
   if (Math.abs(diff) > 50) { 
-    if (diff > 0) goTo(cur + 1); 
-    else goTo(cur - 1);          
+    if (diff > 0 && cur < total - 1) goTo(cur + 1);
+    else if (diff < 0 && cur > 0) goTo(cur - 1);         
   }
 });
 

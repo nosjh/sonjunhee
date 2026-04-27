@@ -610,7 +610,8 @@ ul li a:hover:after {
 }
 @media (max-width: 767px) {
   .swiper {
-    height: 65vh;
+    margin-top: 8px;
+    height: 66vh;
   }
 }
 
